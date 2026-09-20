@@ -1,42 +1,61 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#17365D"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Japão 2026">
-<link rel="manifest" href="manifest.json"><title>Viagem Japão 2026</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#17365D">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Japão 2026">
+<link rel="manifest" href="manifest.json">
+<title>Japão 2026 • Operacional</title>
 <style>
-:root{--n:#17365d;--b:#1f4e78;--g:#70ad47;--bg:#f4f7fb;--mut:#667085;--card:#fff;--yl:#fff2cc;--or:#fce4d6}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;color:var(--n)}
-.app{max-width:760px;margin:auto;padding-bottom:40px}.top{position:sticky;top:0;z-index:5;color:#fff;background:linear-gradient(135deg,var(--n),var(--b));padding:calc(15px + env(safe-area-inset-top)) 14px 13px;box-shadow:0 2px 12px #0002}.title{font-weight:800;font-size:22px}.small{font-size:10px;opacity:.8;letter-spacing:.08em;margin-top:3px}.picker{margin-top:11px;display:flex;gap:7px;align-items:center;background:#fff;border-radius:12px;padding:7px;color:var(--n)}select{width:100%;border:0;background:#e2f0d9;border-radius:9px;padding:9px;font-weight:800;color:var(--n);font-size:14px}.body{padding:12px}.card{background:var(--card);border-radius:15px;padding:13px;margin-bottom:9px;box-shadow:0 2px 8px #17365d12}.city{text-transform:uppercase;font-size:11px;font-weight:800;color:var(--b)}h2{margin:3px 0 8px;font-size:20px}h3{margin:0 0 7px;font-size:11px;text-transform:uppercase;color:var(--b)}p{margin:0;line-height:1.45;font-size:13px}.pills{display:flex;gap:6px;flex-wrap:wrap}.pill{background:#eef3f8;padding:6px 8px;border-radius:8px;font-size:10px;font-weight:800}.grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.warn{background:var(--yl);border-left:4px solid #f4b183}.bag{background:#f0f8eb;border-left:4px solid var(--g)}.btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}.btn{border:0;border-radius:11px;padding:12px;font-weight:800;color:var(--n);background:#fff;box-shadow:0 2px 7px #17365d18}.green{background:var(--g);color:#fff}.muted{color:var(--mut);font-size:10px}.hide{display:none}@media(max-width:520px){.grid{grid-template-columns:1fr}}
-</style></head>
+:root{--navy:#17365D;--blue:#1F4E78;--green:#70AD47;--bg:#F4F7FB;--muted:#667085;--card:#fff;--yellow:#FFF2CC;--orange:#FCE4D6}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;color:var(--navy)}
+.app{max-width:780px;margin:auto;padding-bottom:45px}.top{position:sticky;top:0;z-index:20;color:#fff;background:linear-gradient(135deg,var(--navy),var(--blue));padding:calc(14px + env(safe-area-inset-top)) 14px 10px;box-shadow:0 3px 15px #0002}.title{font-weight:850;font-size:21px}.sub{font-size:9px;opacity:.82;letter-spacing:.09em;margin-top:3px}.picker{margin-top:10px;background:#fff;border-radius:12px;padding:6px;display:flex;align-items:center;color:var(--navy)}select{width:100%;border:0;background:#E2F0D9;border-radius:9px;padding:9px;font-weight:800;color:var(--navy);font-size:14px}.tabs{display:flex;gap:6px;margin-top:9px;overflow:auto}.tab{white-space:nowrap;border:0;border-radius:9px;padding:8px 10px;background:#ffffff25;color:#fff;font-weight:800;font-size:11px}.tab.on{background:#fff;color:var(--navy)}
+.body{padding:12px}.card{background:var(--card);border-radius:15px;padding:13px;margin-bottom:9px;box-shadow:0 2px 9px #17365d12}.city{font-size:10px;font-weight:850;text-transform:uppercase;color:var(--blue)}h2{font-size:20px;margin:3px 0 8px}h3{font-size:11px;text-transform:uppercase;color:var(--blue);margin:0 0 8px}p{font-size:13px;line-height:1.45;margin:0}.pills{display:flex;flex-wrap:wrap;gap:6px}.pill{font-size:10px;font-weight:800;background:#EEF3F8;padding:6px 8px;border-radius:8px}.warn{background:var(--yellow);border-left:4px solid #F4B183}.bag{background:#F1F8EC;border-left:4px solid var(--green)}.row{padding:9px 0;border-top:1px solid #e8edf2}.row:first-child{border-top:0}.time{font-weight:850;font-size:12px;color:var(--blue)}.title2{font-weight:800;font-size:13px;margin-top:2px}.muted{color:var(--muted);font-size:11px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}.btn{border:0;border-radius:11px;padding:12px;font-weight:800;background:#fff;color:var(--navy);box-shadow:0 2px 8px #17365d18}.green{background:var(--green);color:#fff}.map{display:inline-block;margin-top:7px;text-decoration:none;background:#EAF2F8;border-radius:8px;padding:7px 9px;color:var(--blue);font-weight:800;font-size:11px}.empty{padding:12px;color:var(--muted);font-size:12px}@media(max-width:520px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
 <body><div class="app">
-<header class="top"><div class="title">🇦🇪 Dubai + 🇯🇵 Japão 2026</div><div class="small">DASHBOARD OPERACIONAL • 8 VIAJANTES</div><div class="picker">📅 <select id="day"></select></div></header>
-<main class="body" id="view"></main>
-</div>
+<header class="top">
+<div class="title">🇦🇪 Dubai + 🇯🇵 Japão 2026</div><div class="sub">DASHBOARD OPERACIONAL • 8 VIAJANTES</div>
+<div class="picker">📅 <select id="day"></select></div>
+<div class="tabs"><button class="tab on" data-tab="dia">Hoje</button><button class="tab" data-tab="roteiro">Horário</button><button class="tab" data-tab="metro">Metrô</button><button class="tab" data-tab="rest">Restaurantes</button><button class="tab" data-tab="log">Logística</button></div>
+</header>
+<main class="body" id="view"></main></div>
 <script src="data.js"></script>
 <script>
-const D=window.TRIP_DATA||[], day=document.getElementById('day'), view=document.getElementById('view');
+const T=window.TRIP||{}, BI=T.bi||[], day=document.getElementById('day'), view=document.getElementById('view');let tab='dia';
 const esc=x=>String(x??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
-D.forEach((x,i)=>{let o=document.createElement('option');o.value=i;o.textContent=(x.Data||'').split('-').reverse().join('/')+' — '+(x.Cidade||'')+' — '+(x.Atividade||'');day.appendChild(o)});
-function render(){
- let x=D[+day.value]||D[0]||{};
- const res=String(x.Reserva||''), act=String(x['Ação relevante do dia']||''), bag=String(x['Bagagem / Takyubin']||'');
- view.innerHTML=`
- <section class="card"><div class="city">${esc(x.Cidade)}</div><h2>${esc(x.Atividade)}</h2>
- <div class="pills"><span class="pill">⏰ ${esc(x.Horário)}</span><span class="pill">🚇 ${esc(x.Transporte)}</span><span class="pill">⭐ ${esc(x.Prioridade)}</span><span class="pill">📌 ${esc(x.Status)}</span></div></section>
- <section class="card"><h3>🧭 Logística</h3><p>${esc(x['Logística detalhada'])}</p></section>
- <section class="card warn"><h3>⚠️ Ação do dia</h3><p>${esc(act||'Nenhuma ação crítica cadastrada.')}</p></section>
- <section class="card bag"><h3>🧳 Bagagem / Takyubin</h3><p>${esc(bag||'Nenhuma operação de bagagem cadastrada.')}</p></section>
- <div class="grid"><section class="card"><h3>🍜 Almoço</h3><p>${esc(x['Almoço sugerido'])}</p></section><section class="card"><h3>🍽️ Jantar</h3><p>${esc(x['Jantar sugerido'])}</p></section></div>
- <section class="card"><h3>🍽️ Observação restaurantes</h3><p>${esc(x['Observação restaurante'])}</p></section>
- <section class="card"><h3>🕒 Horário operacional</h3><p>${esc(x['Horário operacional sugerido'])}</p></section>
- <section class="card"><h3>📝 Observações</h3><p>${esc(x.Observação)}</p></section>
- <section class="card"><h3>👨‍👩‍👧‍👦 Grupo</h3><p>${esc(x.Composição||'Edu + Sabrina + Lucca | Mario + Edna + Fabio + Jozi + Yasmim')}</p></section>
- <div class="btns"><button class="btn green" onclick="today()">📅 Hoje</button><button class="btn" onclick="share()">↗ Compartilhar</button></div>
- <p class="muted" style="margin:10px 2px">Fonte operacional: BI_DATA da v8. A planilha mestre permanece intacta.</p>`;
+const maps=(a,b)=>`https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(a||'')}&destination=${encodeURIComponent(b||'')}`;
+const dates=[...new Set(BI.map(x=>x.Data).filter(Boolean))];
+dates.forEach((d,i)=>{let x=BI.find(z=>z.Data===d)||{};let o=document.createElement('option');o.value=d;o.textContent=d.split('-').reverse().join('/')+' — '+(x.Cidade||'')+' — '+(x.Atividade||'');day.appendChild(o)});
+function get(){return BI.find(x=>x.Data===day.value)||{}}
+function rows(arr,filter){
+ let r=arr.filter(filter); if(!r.length)return '<div class="empty">Nenhuma informação cadastrada para este dia.</div>';
+ return r.map(x=>`<div class="row"><div class="time">${esc(x.Horário||x['Tempo ref.']||x['Horário operacional sugerido']||'')}</div><div class="title2">${esc(x.Etapa||x['Trecho / destino']||x['Restaurante sugerido']||x.Destino||'')}</div><p class="muted">${esc(x['Deslocamento / ação']||x['Rota passo a passo']||x['Por que faz sentido']||x['Como identificar']||x['Ponto de atenção']||'')}</p></div>`).join('');
 }
-function today(){let t=new Date().toISOString().slice(0,10),i=D.findIndex(x=>x.Data===t);if(i>=0)day.value=i;render()}
-function share(){if(navigator.share)navigator.share({title:'Viagem Japão 2026',text:'Dashboard operacional da viagem'});else alert('Use o menu Compartilhar do navegador.')}
-day.addEventListener('change',render);day.value=0;render();
+function renderDia(x){
+ view.innerHTML=`<section class="card"><div class="city">${esc(x.Cidade)}</div><h2>${esc(x.Atividade)}</h2><div class="pills"><span class="pill">⏰ ${esc(x.Horário)}</span><span class="pill">🚇 ${esc(x.Transporte)}</span><span class="pill">⭐ ${esc(x.Prioridade)}</span><span class="pill">📌 ${esc(x.Status)}</span></div></section>
+<section class="card"><h3>🧭 Próxima logística</h3><p>${esc(x['Logística detalhada']||x.Observação)}</p></section>
+<section class="card warn"><h3>⚠️ Ação do dia</h3><p>${esc(x['Ação relevante do dia']||'Nenhuma ação crítica cadastrada.')}</p></section>
+<section class="card bag"><h3>🧳 Bagagem / Takyubin</h3><p>${esc(x['Bagagem / Takyubin']||'Nenhuma operação de bagagem cadastrada.')}</p></section>
+<div class="grid"><section class="card"><h3>🍜 Almoço</h3><p>${esc(x['Almoço sugerido'])}</p></section><section class="card"><h3>🍽️ Jantar</h3><p>${esc(x['Jantar sugerido'])}</p></section></div>
+<section class="card"><h3>🕒 Horário operacional</h3><p>${esc(x['Horário operacional sugerido'])}</p></section>
+<div class="btns"><button class="btn green" onclick="setToday()">📅 Hoje</button><button class="btn" onclick="share()">↗ Compartilhar</button></div>`;
+}
+function render(){
+ let x=get();
+ if(tab==='dia')return renderDia(x);
+ if(tab==='roteiro')view.innerHTML=`<section class="card"><h3>🕒 Roteiro horário</h3>${rows(T.schedule,z=>z.Data===day.value)}</section>`;
+ if(tab==='metro')view.innerHTML=`<section class="card"><h3>🚇 Metrô passo a passo</h3>${(T.metro||[]).filter(z=>z.Data===day.value).map(z=>`<div class="row"><div class="title2">${esc(z.Origem)} → ${esc(z.Destino)}</div><p>${esc(z['Passo 1'])}</p><p>${esc(z['Passo 2'])}</p><p>${esc(z['Passo 3'])}</p><p class="muted">${esc(z['Como identificar'])} • ${esc(z['Tempo ref.'])}</p><a class="map" target="_blank" href="${maps(z.Origem,z.Destino)}">🗺️ Abrir rota</a></div>`).join('')||'<div class="empty">Nenhum roteiro de metrô cadastrado.</div>'}</section>`;
+ if(tab==='rest')view.innerHTML=`<section class="card"><h3>🍜 Restaurantes do dia</h3>${(T.restaurants||[]).filter(z=>z.Data===day.value).map(z=>`<div class="row"><div class="time">${esc(z.Horário)} • ${esc(z.Tipo)}</div><div class="title2">${esc(z['Restaurante sugerido'])}</div><p>${esc(z['Por que faz sentido'])}</p><p class="muted">${esc(z['Reserva / observação'])}</p><a class="map" target="_blank" href="${maps(z['Local / região'],z['Restaurante sugerido'])}">📍 Abrir no Maps</a></div>`).join('')||'<div class="empty">Nenhum restaurante cadastrado para este dia.</div>'}</section>`;
+ if(tab==='log')view.innerHTML=`<section class="card"><h3>🧭 Deslocamentos detalhados</h3>${(T.moves||[]).filter(z=>z.Data===day.value).map(z=>`<div class="row"><div class="time">${esc(z['Saída sugerida'])}</div><div class="title2">${esc(z['Trecho / destino'])}</div><p>${esc(z['Rota passo a passo'])}</p><p class="muted">⏱ ${esc(z['Tempo de referência'])} • 🎫 ${esc(z['Bilhete / pagamento'])}</p><p class="muted">⚠️ ${esc(z['Ponto de atenção'])}</p><a class="map" target="_blank" href="${maps('',z['Trecho / destino'])}">🗺️ Abrir destino</a></div>`).join('')||'<div class="empty">Nenhum deslocamento cadastrado.</div>'}</section>`;
+ document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.tab===tab));
+}
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{tab=b.dataset.tab;render()});
+day.onchange=render;
+function setToday(){let t=new Date().toISOString().slice(0,10);if(dates.includes(t))day.value=t;tab='dia';render()}
+function share(){if(navigator.share)navigator.share({title:'Viagem Japão 2026',text:'Dashboard operacional da viagem',url:location.href});else alert('Use o menu Compartilhar do navegador.')}
+day.value=dates[0]||'';render();
 if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js');
 </script></body></html>

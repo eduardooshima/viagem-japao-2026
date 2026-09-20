@@ -3,8 +3,8 @@
   "short_name": "Japão 2026",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#f4f7fb",
-  "theme_color": "#17365d",
+  "background_color": "#F4F7FB",
+  "theme_color": "#17365D",
   "lang": "pt-BR",
   "icons": [
     {
