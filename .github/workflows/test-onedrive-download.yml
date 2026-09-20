@@ -1,0 +1,38 @@
+name: Test OneDrive download
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/test-onedrive-download.yml"
+
+jobs:
+  test-download:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Excel from OneDrive
+        env:
+          ONEDRIVE_URL: "https://1drv.ms/x/c/4ba949970b3c4118/IQCflDdB-ETnTL-wa31SdvJeAQTA2GxeUvx_txBTl_5Moho"
+        run: |
+          set -e
+          curl -L --fail --silent --show-error "$ONEDRIVE_URL" -o viagem.xlsx
+          file viagem.xlsx
+          test -s viagem.xlsx
+          python - <<'PY'
+          import zipfile
+          p="viagem.xlsx"
+          if not zipfile.is_zipfile(p):
+              raise SystemExit("O link não retornou um arquivo XLSX baixável.")
+          with zipfile.ZipFile(p) as z:
+              required={"[Content_Types].xml","xl/workbook.xml"}
+              missing=required-set(z.namelist())
+              if missing:
+                  raise SystemExit(f"Arquivo baixado não parece ser um XLSX válido: {missing}")
+          print("OK: o OneDrive forneceu um XLSX válido.")
+          PY
+      - name: Upload downloaded file for inspection
+        uses: actions/upload-artifact@v4
+        with:
+          name: onedrive-download-test
+          path: viagem.xlsx
+          retention-days: 1
