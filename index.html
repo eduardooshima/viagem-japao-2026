@@ -61,7 +61,7 @@ function renderDia(x){
    <div class="pills"><span class="pill">⏰ ${esc(x.Horário)}</span><span class="pill">🚇 ${esc(x.Transporte)}</span><span class="pill">⭐ ${esc(x.Prioridade)}</span><span class="pill">📌 ${esc(x.Status)}</span></div>
  </section>
  <section class="card"><h3>🕒 Roteiro do dia</h3>
-   ${dayRows.length?dayRows.map(z=>`<div class="row"><div class="time">${esc(z.Horário)}</div><div class="title2">${esc(z.Etapa)}</div><p class="muted">${esc(z['Deslocamento / ação'])}</p><p class="muted">${esc(z['Reserva / pagamento'])}${z.Observação?' • '+esc(z.Observação):''}</p></div>`).join(''):'<div class="empty">Nenhum horário detalhado cadastrado.</div>'}
+   ${dayRows.length?dayRows.map(z=>`<div class="row"><div class="time">${esc(z.Horário)}</div><div class="title2">${esc(z.Etapa)}</div><p class="muted">${esc(z['Deslocamento / ação'])}</p><p class="muted">${esc(z['Reserva / pagamento'])}${z['Observação operacional']?' • '+esc(z['Observação operacional']):''}</p></div>`).join(''):'<div class="empty">Nenhum horário detalhado cadastrado.</div>'}
  </section>
  <section class="card"><h3>🧭 Logística</h3><p>${esc(x['Logística detalhada']||x.Observação)}</p></section>
  <section class="card">
