@@ -1,4 +1,4 @@
-const C='japao2026-v12';
+const C='japao2026-v11';
 const A=['./','./index.html','./data.js','./manifest.json','./icon.svg'];
 
 self.addEventListener('install', event => {
@@ -20,22 +20,6 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-  const url = new URL(event.request.url);
-  const isDynamic = url.pathname.endsWith('/index.html') || url.pathname.endsWith('/data.js') || url.pathname === '/';
-
-  if (isDynamic) {
-    event.respondWith(
-      fetch(event.request, { cache: 'no-store' })
-        .then(response => {
-          const copy = response.clone();
-          caches.open(C).then(cache => cache.put(event.request, copy));
-          return response;
-        })
-        .catch(() => caches.match(event.request))
-    );
-    return;
-  }
-
   event.respondWith(
     caches.match(event.request).then(cached => cached || fetch(event.request))
   );
