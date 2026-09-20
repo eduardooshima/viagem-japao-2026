@@ -1,7 +1,7 @@
 {
   "version": "auto",
   "source": "BI_DATA",
-  "updated": "2026-09-20T15:35:40.683079",
+  "updated": "2026-09-20T19:01:28.483341",
   "rows": [
     {
       "Data": "2026-12-05T00:00:00",
@@ -46,7 +46,7 @@
       "Almoço sugerido": "Social House — Dubai Mall",
       "Jantar sugerido": "Hurricane’s Grill Dubai Mall ou GIA — Dubai Mall",
       "Observação restaurante": "Boas opções para almoço/jantar na mesma área. Social House funciona a partir das 09h; Hurricane’s e GIA têm operação a partir do fim da manhã/tarde.",
-      "Logística detalhada": "Chegada/estadia em Dubai. Usar metrô ou táxi conforme o passeio; para 8 pessoas, comparar tempo/custo do táxi.",
+      "Logística detalhada": "Aeroporto DXB → imigração/bagagem → táxi/Careem → hotel. Como a chegada é 22:35, não programar transporte público.",
       "Ação relevante do dia": "Separar apenas o necessário para o dia.",
       "Bagagem / Takyubin": "Malas grandes permanecem no hotel.",
       "Horário operacional sugerido": "Almoço 12:00–13:30; jantar 19:00–20:30."
@@ -70,7 +70,7 @@
       "Almoço sugerido": "Social House — Dubai Mall",
       "Jantar sugerido": "Hurricane’s Grill Dubai Mall",
       "Observação restaurante": "Se o passeio do dia for Downtown/Burj Khalifa, concentrar a refeição no Dubai Mall reduz deslocamentos.",
-      "Logística detalhada": "Segundo dia de Dubai. Organizar o circuito por regiões para reduzir deslocamentos.",
+      "Logística detalhada": "Hotel → Dubai Mall por shuttle do hotel ou táxi/Careem. Dentro do complexo: Dubai Mall → Burj Khalifa a pé. Retorno pelo mesmo eixo.",
       "Ação relevante do dia": "Confirmar horário do voo seguinte e organizar malas para a saída.",
       "Bagagem / Takyubin": "Deixar malas prontas para o deslocamento seguinte.",
       "Horário operacional sugerido": "Check-out conforme horário do voo."
@@ -94,7 +94,7 @@
       "Almoço sugerido": "Alimentação no aeroporto ou próximo ao hotel, conforme voo",
       "Jantar sugerido": "Emirates / a bordo",
       "Observação restaurante": "Dia de transferência: não recomendo deslocamento específico para restaurante.",
-      "Logística detalhada": "Dubai → Tokyo. Conferir terminal e horário de apresentação.",
+      "Logística detalhada": "Hotel → DXB de táxi/Careem → EK0312 → Haneda → imigração/bagagem → trem/monotrilho/táxi para o hotel.",
       "Ação relevante do dia": "Confirmar documentos, cartões e carregadores.",
       "Bagagem / Takyubin": "Malas seguem no voo; não enviar Takyubin.",
       "Horário operacional sugerido": "Chegar ao aeroporto ~3h antes."
@@ -118,7 +118,7 @@
       "Almoço sugerido": "Momo Paradise Shinjuku Higashi-guchi",
       "Jantar sugerido": "Teppan Baby — Shinjuku",
       "Observação restaurante": "Momo Paradise atende almoço 11:30–15:00 e jantar 17:00–22:30; Teppan Baby abre a partir das 17h.",
-      "Logística detalhada": "Chegada a Tokyo → imigração → bagagem → hotel. Priorizar descanso.",
+      "Logística detalhada": "Base → Morishita → Asakusa. Senso-ji/Nakamise a pé. Asakusa → Tokyo Skytree pela Tobu Skytree Line. Skytree/Solamachi → Oshiage/Sumiyoshi → Morishita.",
       "Ação relevante do dia": "Ativar eSIM/IC card e revisar reservas.",
       "Bagagem / Takyubin": "Manter as malas grandes até estabilizar no hotel.",
       "Horário operacional sugerido": "Deixar o restante do dia flexível."
@@ -142,7 +142,7 @@
       "Almoço sugerido": "Momo Paradise Shinjuku Higashi-guchi",
       "Jantar sugerido": "Tokyo Omakase Sushi Wagyu — Shinjuku",
       "Observação restaurante": "Opções concentradas em Shinjuku para evitar deslocamento excessivo.",
-      "Logística detalhada": "Tokyo em ritmo leve. Agrupar atrações por região.",
+      "Logística detalhada": "Morishita → Kudanshita (Toei Shinjuku Line) → Shibuya (Tokyo Metro Hanzomon Line) → Hachiko/Shopping. Retorno pelo mesmo eixo.",
       "Ação relevante do dia": "Revisar ingressos dos parques e trajetos de metrô.",
       "Bagagem / Takyubin": "Nenhum envio necessário.",
       "Horário operacional sugerido": "Evitar programação excessiva."
@@ -157,7 +157,7 @@
       "Reserva": "Ingresso",
       "Status": "Pendente",
       "Prioridade": "Alta",
-      "Plano_B": "Manter parque",
+      "Plano_B": "DisneySea",
       "Observação": null,
       "Grupo": "8 pessoas",
       "Composição": "Edu + Sabrina + Lucca | Mario + Edna + Fabio + Jozi + Yasmim",
@@ -166,7 +166,7 @@
       "Almoço sugerido": "Magellan’s / Restaurant Sakura",
       "Jantar sugerido": "Ristorante di Canaletto / S.S. Columbia Dining Room",
       "Observação restaurante": "O Tokyo DisneySea lista essas opções oficialmente; verificar horário e prioridade para 8 pessoas. Mobile Order está disponível em restaurantes elegíveis.",
-      "Logística detalhada": "Hotel → Tokyo DisneySea. Trem e dia inteiro no parque.",
+      "Logística detalhada": "Morishita → Tsukishima → Shin-Kiba → Maihama. De Maihama, seguir para Resort Gateway e Disney Resort Line até DisneySea, conforme operação do dia.",
       "Ação relevante do dia": "Baixar ingressos/app e conferir prioridades.",
       "Bagagem / Takyubin": "Malas permanecem no hotel.",
       "Horário operacional sugerido": "Chegar antes da abertura/horário do ingresso."
@@ -181,7 +181,7 @@
       "Reserva": "Transporte",
       "Status": "Pendente",
       "Prioridade": "Alta",
-      "Plano_B": "Tokyo indoor se chuva",
+      "Plano_B": "Kawaguchiko + Ropeway",
       "Observação": null,
       "Grupo": "8 pessoas",
       "Composição": "Edu + Sabrina + Lucca | Mario + Edna + Fabio + Jozi + Yasmim",
@@ -190,7 +190,7 @@
       "Almoço sugerido": "Restaurante próximo à estação/lago em Kawaguchiko",
       "Jantar sugerido": "Restaurante próximo ao hotel em Tokyo",
       "Observação restaurante": "Dia muito dependente do horário de retorno de Fuji; melhor manter jantar flexível.",
-      "Logística detalhada": "Tokyo → Kawaguchiko/Fuji e retorno. Conferir clima antes da saída.",
+      "Logística detalhada": "Base → Morishita → Shinjuku → Otsuki → Kawaguchiko. Da estação Kawaguchiko, ônibus local/táxi até a área do lago e Ropeway. Retorno Kawaguchiko → Shinjuku → base.",
       "Ação relevante do dia": "Verificar visibilidade do Fuji.",
       "Bagagem / Takyubin": "Malas permanecem no hotel.",
       "Horário operacional sugerido": "Saída cedo; almoço em Kawaguchiko."
@@ -205,16 +205,16 @@
       "Reserva": "Tour",
       "Status": "Pendente",
       "Prioridade": "Média",
-      "Plano_B": "Chinatown/Minato Mirai",
+      "Plano_B": "Stadium + Chinatown/Minato Mirai",
       "Observação": null,
       "Grupo": "8 pessoas",
       "Composição": "Edu + Sabrina + Lucca | Mario + Edna + Fabio + Jozi + Yasmim",
       "Unnamed: 13": null,
       "Datas do seletor": "2026-12-13T00:00:00",
-      "Almoço sugerido": "とんとんとんきぃ スタジアム横バル街店",
+      "Almoço sugerido": "Filial Tonton-Tonky (Zona de Bares ao Lado do Estádio)",
       "Jantar sugerido": "bills Yokohama Red Brick Warehouse",
       "Observação restaurante": "A primeira opção fica literalmente na região do estádio e funciona a partir das 11h; bills funciona até a noite.",
-      "Logística detalhada": "Tokyo → Yokohama Stadium. Trem; combinar estádio + Chinatown/Minato Mirai.",
+      "Logística detalhada": "Morishita → eixo JR para Yokohama → Kannai. Stadium a pé. Stadium → Chinatown a pé. Chinatown → Cup Noodles por transporte local/Bayside Blue ou caminhada conforme disposição. Cup Noodles → Cosmo World a pé. Minato Mirai → estação → Tóquio.",
       "Ação relevante do dia": "Confirmar disponibilidade/horário do Stadium Tour.",
       "Bagagem / Takyubin": "Malas permanecem no hotel.",
       "Horário operacional sugerido": "Almoço próximo ao estádio."
@@ -238,9 +238,9 @@
       "Almoço sugerido": "DOTONBORI KUROFUNE",
       "Jantar sugerido": "Yakiniku Rikimaru Nanba Dotonbori",
       "Observação restaurante": "Rikimaru é especialmente conveniente para jantar em Dotonbori; confirmar disponibilidade para 8.",
-      "Logística detalhada": "Check-out Tokyo → estação → Shinkansen para Osaka. Viajar leve.",
+      "Logística detalhada": "Hotel → balcão Takkyubin: despachar 1 mala de 23 kg para hotel em Nagoya. Depois hotel → estação → Shinkansen para Shin-Osaka → JR para Osaka → Hotel Hankyu RESPIRE Osaka.",
       "Ação relevante do dia": "Despachar 1 mala grande via Takyubin de Tokyo para Osaka.",
-      "Bagagem / Takyubin": "Enviar 1 mala grande para o hotel de Osaka; manter 1 mala grande + bordo.",
+      "Bagagem / Takyubin": "Mala 23 kg #1: Nagoya",
       "Horário operacional sugerido": "Takyubin pela manhã; Shinkansen depois."
     },
     {
@@ -253,7 +253,7 @@
       "Reserva": "—",
       "Status": "Planejado",
       "Prioridade": "Alta",
-      "Plano_B": "Koko-en pode ser cortado",
+      "Plano_B": "Castelo + Koko-en",
       "Observação": null,
       "Grupo": "8 pessoas",
       "Composição": "Edu + Sabrina + Lucca | Mario + Edna + Fabio + Jozi + Yasmim",
@@ -262,7 +262,7 @@
       "Almoço sugerido": "Restaurante próximo à estação de Himeji",
       "Jantar sugerido": "Yakiniku Rikimaru Nanba Dotonbori",
       "Observação restaurante": "Almoço deve ser prático perto do castelo/estação; jantar em Namba.",
-      "Logística detalhada": "Osaka → Himeji → castelo → retorno a Osaka.",
+      "Logística detalhada": "Hotel → Osaka Station → Himeji Station (JR) → ônibus para Himeji Castle Otemon-mae → Castelo → Koko-en a pé. Retorno a Himeji Station → Osaka Station → hotel.",
       "Ação relevante do dia": "Conferir trem antes de sair.",
       "Bagagem / Takyubin": "Mala enviada permanece no hotel.",
       "Horário operacional sugerido": "Saída de Osaka pela manhã."
@@ -277,7 +277,7 @@
       "Reserva": "Ingresso",
       "Status": "Pendente",
       "Prioridade": "Alta",
-      "Plano_B": "Não adicionar Nara",
+      "Plano_B": "USJ para grupo do parque",
       "Observação": null,
       "Grupo": "8 pessoas",
       "Composição": "Edu + Sabrina + Lucca | Mario + Edna + Fabio + Jozi + Yasmim",
@@ -286,7 +286,7 @@
       "Almoço sugerido": "Restaurante dentro do USJ",
       "Jantar sugerido": "Universal City / Osaka após o parque",
       "Observação restaurante": "Para 8 pessoas, priorizar alimentação dentro do parque e evitar deslocamento externo no meio do dia.",
-      "Logística detalhada": "Osaka → Universal Studios Japan; trem até Universal City.",
+      "Logística detalhada": "Hotel → Osaka Station → Universal City pela JR Osaka Loop Line / conexão indicada no dia → Universal Studios Japan. Retorno Universal City → Osaka Station → hotel.",
       "Ação relevante do dia": "Conferir ingresso, Express Pass e horários marcados.",
       "Bagagem / Takyubin": "Malas permanecem no hotel.",
       "Horário operacional sugerido": "Chegar cedo ao USJ."
@@ -301,7 +301,7 @@
       "Reserva": "—",
       "Status": "Planejado",
       "Prioridade": "Alta",
-      "Plano_B": "Fazer uma atração principal",
+      "Plano_B": "Arashiyama + 1 templo",
       "Observação": null,
       "Grupo": "8 pessoas",
       "Composição": "Edu + Sabrina + Lucca | Mario + Edna + Fabio + Jozi + Yasmim",
@@ -310,7 +310,7 @@
       "Almoço sugerido": "WAGYU Ramen Arashiyama",
       "Jantar sugerido": "Restaurante em Osaka após retorno",
       "Observação restaurante": "WAGYU Ramen funciona 10:00–17:30, adequado para almoço tardio após Arashiyama.",
-      "Logística detalhada": "Osaka → Kyoto/Arashiyama → retorno a Osaka.",
+      "Logística detalhada": "Recomendação de rota: Osaka Station → Kyoto Station (JR). Kyoto Station → Arashiyama/Saga-Arashiyama (JR). Depois seguir para 1 segunda atração escolhida (Kinkaku-ji OU Kiyomizu-dera) e, se houver energia, Fushimi Inari. Retorno para Kyoto Station → Osaka.",
       "Ação relevante do dia": "Conferir clima e lotação.",
       "Bagagem / Takyubin": "Malas permanecem no hotel.",
       "Horário operacional sugerido": "Saída pela manhã."
@@ -334,9 +334,9 @@
       "Almoço sugerido": "Kitchen Nagoya",
       "Jantar sugerido": "Maruya Honten - JR Nagoya Station",
       "Observação restaurante": "Ambos ficam no complexo da estação; muito convenientes no dia de transferência.",
-      "Logística detalhada": "Check-out Osaka → Shinkansen → Nagoya.",
+      "Logística detalhada": "Hotel → Osaka Station → Shin-Osaka → Tokaido Shinkansen → Nagoya Station → Hotel Via Inn Nagoya Ekimae Tsubakicho. Receber a mala enviada de Tóquio.",
       "Ação relevante do dia": "Despachar 1 mala grande de Osaka para Tokyo, se o hotel aceitar recebimento.",
-      "Bagagem / Takyubin": "Enviar 1 mala grande para Tokyo; viajar para Nagoya com a outra + bordo.",
+      "Bagagem / Takyubin": "Mala 23 kg #2: Osaka",
       "Horário operacional sugerido": "Takyubin pela manhã antes do Shinkansen."
     },
     {
@@ -349,7 +349,7 @@
       "Reserva": "Ingresso",
       "Status": "Pendente",
       "Prioridade": "Alta",
-      "Plano_B": "—",
+      "Plano_B": "Legoland",
       "Observação": null,
       "Grupo": "8 pessoas",
       "Composição": "Edu + Sabrina + Lucca | Mario + Edna + Fabio + Jozi + Yasmim",
@@ -358,7 +358,7 @@
       "Almoço sugerido": "Restaurante dentro do parque",
       "Jantar sugerido": "Restaurante próximo ao hotel em Nagoya",
       "Observação restaurante": "Manter jantar simples após o parque.",
-      "Logística detalhada": "Nagoya → Legoland Japan. Trem Aonami até Kinjo-futo.",
+      "Logística detalhada": "Hotel → Nagoya Station → Kinjofuto pela Aonami Line → Legoland a pé. Retorno pelo mesmo eixo.",
       "Ação relevante do dia": "Conferir ingresso e horário.",
       "Bagagem / Takyubin": "Malas permanecem no hotel.",
       "Horário operacional sugerido": "Saída cedo."
@@ -382,7 +382,7 @@
       "Almoço sugerido": "Restaurante próximo ao endereço dos parentes",
       "Jantar sugerido": "Restaurante próximo ao endereço dos parentes",
       "Observação restaurante": "Preciso do endereço da visita para sugerir opções realmente próximas.",
-      "Logística detalhada": "Deslocamento em Aichi conforme endereço dos parentes.",
+      "Logística detalhada": "Hotel → estação/ponto definido para encontrar os parentes → retorno a Nagoya conforme programação familiar.",
       "Ação relevante do dia": "Confirmar endereço e horário da visita.",
       "Bagagem / Takyubin": "Malas permanecem no hotel.",
       "Horário operacional sugerido": "Horário conforme encontro familiar."
@@ -406,9 +406,9 @@
       "Almoço sugerido": "Restaurante na Tokyo Station / Ueno",
       "Jantar sugerido": "Restaurante em Ueno / Asakusa",
       "Observação restaurante": "Dia de shinkansen: priorizar restaurantes próximos à chegada.",
-      "Logística detalhada": "Check-out Nagoya → Shinkansen → Tokyo → hotel.",
+      "Logística detalhada": "Hotel → despachar 1 mala de 23 kg via Takkyubin para hotel em Tóquio. Hotel → Nagoya Station → Tokaido Shinkansen → Tokyo Station → metrô/trem até Ikebukuro → Hotel Dai-ichi Inn Ikebukuro.",
       "Ação relevante do dia": "Confirmar recepção da mala enviada.",
-      "Bagagem / Takyubin": "Receber a mala Takyubin no hotel de Tokyo.",
+      "Bagagem / Takyubin": "Mala 23 kg #1: Nagoya",
       "Horário operacional sugerido": "Saída de Nagoya pela manhã."
     },
     {
@@ -421,7 +421,7 @@
       "Reserva": "Ingresso",
       "Status": "Pendente",
       "Prioridade": "Alta",
-      "Plano_B": "Sunshine City",
+      "Plano_B": "Studio Tour",
       "Observação": null,
       "Grupo": "8 pessoas",
       "Composição": "Edu + Sabrina + Lucca | Mario + Edna + Fabio + Jozi + Yasmim",
@@ -430,7 +430,7 @@
       "Almoço sugerido": "Gyukatsu Motomura Sunshine Ikebukuro",
       "Jantar sugerido": "WAGYUSUKIYAKI GOKU Ikebukuro",
       "Observação restaurante": "Ambos ficam na região de Sunshine/Ikebukuro e têm operação de almoço e jantar.",
-      "Logística detalhada": "Tokyo → Ikebukuro/Sunshine City → Warner Bros. Studio Tour.",
+      "Logística detalhada": "Para Harry Potter: Ikebukuro → Toshimaen pela Seibu Ikebukuro Line → caminhada até Warner Bros. Studio Tour. Retorno pelo mesmo eixo. Sunshine City fica a curta caminhada do hotel para o grupo alternativo.",
       "Ação relevante do dia": "Conferir horário reservado e chegar com antecedência.",
       "Bagagem / Takyubin": "Malas ficam no hotel.",
       "Horário operacional sugerido": "Chegar ~30 min antes do horário reservado."
@@ -445,7 +445,7 @@
       "Reserva": "Ingresso",
       "Status": "Pendente",
       "Prioridade": "Alta",
-      "Plano_B": "Manter parque",
+      "Plano_B": "Disneyland",
       "Observação": null,
       "Grupo": "8 pessoas",
       "Composição": "Edu + Sabrina + Lucca | Mario + Edna + Fabio + Jozi + Yasmim",
@@ -454,7 +454,7 @@
       "Almoço sugerido": "Crystal Palace Restaurant / Restaurant Hokusai",
       "Jantar sugerido": "Restaurante dentro da Disneyland / Maihama",
       "Observação restaurante": "O site oficial do Tokyo Disneyland lista Crystal Palace e Restaurant Hokusai entre as opções do parque; conferir horários e prioridade.",
-      "Logística detalhada": "Tokyo → Tokyo Disneyland → retorno.",
+      "Logística detalhada": "Ikebukuro → Shin-Kiba → Maihama (JR) → caminhada ou Disney Resort Line → Disneyland. Retorno Maihama → Shin-Kiba → Ikebukuro.",
       "Ação relevante do dia": "Conferir ingresso e horários.",
       "Bagagem / Takyubin": "Malas ficam no hotel.",
       "Horário operacional sugerido": "Chegar cedo."
@@ -469,7 +469,7 @@
       "Reserva": "Bilhete",
       "Status": "Pendente",
       "Prioridade": "Alta",
-      "Plano_B": "Ir direto ao aeroporto se atrasar",
+      "Plano_B": "Ueno/Ameyoko + aeroporto",
       "Observação": null,
       "Grupo": "8 pessoas",
       "Composição": "Edu + Sabrina + Lucca | Mario + Edna + Fabio + Jozi + Yasmim",
@@ -478,7 +478,7 @@
       "Almoço sugerido": "Restaurante em Tokyo antes do deslocamento",
       "Jantar sugerido": "Narita / aeroporto",
       "Observação restaurante": "Dia de retorno: deixar margem para deslocamento ao aeroporto.",
-      "Logística detalhada": "Check-out → Tokyo → Narita → voo.",
+      "Logística detalhada": "Hotel → Ikebukuro → Okachimachi pela JR Yamanote → Ameyoko. Ameyoko → Ueno a pé. Ueno → hotel para pegar malas. Hotel → Narita por Narita Express ou limousine bus, conforme melhor conexão.",
       "Ação relevante do dia": "Confirmar terminal e transporte ao aeroporto.",
       "Bagagem / Takyubin": "Levar bagagem ao aeroporto; Takyubin só se hotel/serviço confirmar.",
       "Horário operacional sugerido": "Sair de Tokyo com bastante antecedência."
@@ -502,7 +502,7 @@
       "Almoço sugerido": "Social House — Dubai Mall",
       "Jantar sugerido": "GIA ou Hurricane’s Grill — Dubai Mall",
       "Observação restaurante": "Concentrar refeições no Downtown/Dubai Mall se esse for o eixo do stopover.",
-      "Logística detalhada": "Stopover em Dubai; agrupar roteiro por região.",
+      "Logística detalhada": "DXB → hotel por táxi/Careem. Descanso/banho. Hotel → Dubai Mall. Depois Dubai Mall → Palm Jumeirah por táxi/Careem. Retorno ao hotel.",
       "Ação relevante do dia": "Confirmar horário do voo seguinte.",
       "Bagagem / Takyubin": "Malas conforme hospedagem/voo.",
       "Horário operacional sugerido": "Programação flexível."
@@ -526,7 +526,7 @@
       "Almoço sugerido": "Dubai Mall ou aeroporto, conforme voo",
       "Jantar sugerido": "Emirates / a bordo",
       "Observação restaurante": "Dia de retorno: prioridade para logística.",
-      "Logística detalhada": "Dubai → aeroporto → Brasil.",
+      "Logística detalhada": "Hotel → DXB por táxi/Careem. Chegada ao aeroporto com antecedência para EK0261 09:05.",
       "Ação relevante do dia": "Conferir documentos, compras e bagagem.",
       "Bagagem / Takyubin": "Bagagem despachada no voo.",
       "Horário operacional sugerido": "Chegar ao aeroporto ~3h antes."
@@ -552,7 +552,7 @@
       "Observação restaurante": "Chegada.",
       "Logística detalhada": "Chegada ao Brasil → imigração → bagagem → casa.",
       "Ação relevante do dia": "Conferir todos os volumes antes de sair.",
-      "Bagagem / Takyubin": "Retirar todas as malas.",
+      "Bagagem / Takyubin": "Mala de bordo: Sempre com vocês",
       "Horário operacional sugerido": "Fim da viagem."
     }
   ]
