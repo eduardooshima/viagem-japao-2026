@@ -1,5 +1,5 @@
-const C='japao2026-v12';
-const A=['./','./index.html','./manifest.json','./icon.svg'];
+const C='japao2026-v11';
+const A=['./','./index.html','./data.js','./manifest.json','./icon.svg'];
 
 self.addEventListener('install', event => {
   event.waitUntil(
@@ -20,11 +20,6 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-  const url = new URL(event.request.url);
-  if (url.pathname.endsWith('/data.js') || url.pathname.endsWith('/data.json')) {
-    event.respondWith(fetch(event.request, {cache:'no-store'}));
-    return;
-  }
   event.respondWith(
     caches.match(event.request).then(cached => cached || fetch(event.request))
   );
