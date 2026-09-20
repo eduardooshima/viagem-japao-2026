@@ -19,7 +19,7 @@
 <header class="top">
 <div class="title">🇦🇪 Dubai + 🇯🇵 Japão 2026</div><div class="sub">DASHBOARD OPERACIONAL • 8 VIAJANTES</div>
 <div class="picker">📅 <select id="day"></select></div>
-<div class="tabs"><button class="tab on" data-tab="dia">Meu dia</button><button class="tab" data-tab="roteiro">Horário</button><button class="tab" data-tab="metro">Metrô</button><button class="tab" data-tab="rest">Restaurantes</button><button class="tab" data-tab="log">Logística</button><button class="tab" data-tab="bag">Bagagem</button><button class="tab" data-tab="nav">Navegar</button></div>
+<div class="tabs"><button class="tab on" data-tab="dia">Meu dia</button><button class="tab" data-tab="roteiro">Horário</button><button class="tab" data-tab="metro">Metrô</button><button class="tab" data-tab="rest">Restaurantes</button><button class="tab" data-tab="log">Logística</button><button class="tab" data-tab="bag">Bagagem</button><button class="tab" data-tab="inv">Inventário</button><button class="tab" data-tab="nav">Navegar</button></div>
 </header>
 <main class="body" id="view"></main></div>
 <script src="data.js"></script>
@@ -107,7 +107,19 @@ function render(){
 ${(T.baggage||[]).map(z=>`<section class="card"><div class="title2">${esc(z.Volume)}</div><div class="pills" style="margin:7px 0"><span class="pill">📍 ${esc(z['Início'])}</span><span class="pill">➡️ ${esc(z.Enviar)}</span><span class="pill">🏨 ${esc(z.Destino)}</span><span class="pill">📅 ${esc(z.Quando)}</span><span class="pill">📌 ${esc(z.Status)}</span></div><p><b>Levar com vocês:</b> ${esc(z['O que deve ficar com vocês'])}</p><p class="muted" style="margin-top:6px"><b>Não enviar:</b> ${esc(z['O que NÃO pode ir'])}</p></section>`).join('')}`;
  if(tab==='nav')view.innerHTML=`<section class="card"><h3>🗺️ Navegação do dia</h3><p class="muted">Use esta tela como guia rápido. Para detalhes de metrô, veja também a aba Metrô.</p></section>
 ${(T.moves||[]).filter(z=>z.Data===day.value).map(z=>`<section class="card"><div class="city">${esc(z['Saída sugerida'])}</div><h2>${esc(z['Trecho / destino'])}</h2><p>${esc(z['Rota passo a passo'])}</p><div class="pills" style="margin:9px 0"><span class="pill">⏱️ ${esc(z['Tempo de referência'])}</span><span class="pill">🎫 ${esc(z['Bilhete / pagamento'])}</span></div><p class="muted">⚠️ ${esc(z['Ponto de atenção'])}</p><a class="map" target="_blank" href="${maps('',z['Trecho / destino'])}">📍 Abrir no Google Maps</a></section>`).join('')||'<section class="card"><div class="empty">Nenhum deslocamento detalhado cadastrado para este dia.</div></section>'}`;
- document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.tab===tab));
+ if(tab==='inv'){
+ const inv=T.baggage_inventory||[];
+ const large=inv.filter(z=>z.tipo==='23 kg'), cabin=inv.filter(z=>z.tipo==='Bordo'), packs=inv.filter(z=>z.tipo==='Mochila');
+ const assigned=inv.filter(z=>z.responsavel).length, shipped=inv.filter(z=>z.takyubin).length;
+ view.innerHTML=`<section class="card"><h3>🧳 Inventário do grupo</h3>
+ <div class="grid"><div><b>${esc(inv.length)}</b><div class="muted">volumes cadastrados</div></div><div><b>${esc(assigned)}</b><div class="muted">com responsável</div></div><div><b>${esc(shipped)}</b><div class="muted">com Takyubin definido</div></div><div><b>${esc(large.length)}</b><div class="muted">malas 23 kg</div></div></div>
+ <p class="muted" style="margin-top:9px">A lista é flexível: uma pessoa pode ter várias malas e novas malas podem ser adicionadas durante a viagem.</p></section>
+ <section class="card"><h3>👨‍👩‍👧‍👦 Viajantes</h3><div class="pills">${(T.travellers||[]).map(n=>`<span class="pill">${esc(n)}</span>`).join('')}</div></section>
+ <section class="card"><h3>📦 Volumes</h3>
+ ${(inv.map(z=>`<div class="row"><div class="title2">${esc(z.id)} • ${esc(z.tipo)}</div><p class="muted">👤 ${esc(z.responsavel||'Responsável a definir')} • ⚖️ ${esc(z.peso_kg||'—')} kg • 📍 ${esc(z.local)}</p><p class="muted">🚚 ${esc(z.takyubin||'Takyubin não definido')} ${z.destino?'→ '+esc(z.destino):''} • ${esc(z.status)}</p></div>`).join(''))}
+ </section>
+ <section class="card bag"><h3>➕ Nova mala durante a viagem</h3><p>Quando houver compras suficientes para criar um novo volume, cadastre uma nova mala/caixa, atribua um responsável e defina onde ela estará e se será enviada por Takyubin.</p></section>`;
+ } document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.tab===tab));
 }
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{tab=b.dataset.tab;render()});
 day.onchange=render;
