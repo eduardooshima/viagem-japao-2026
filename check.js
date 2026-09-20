@@ -1,29 +1,3 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#17365D">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Japão 2026">
-<link rel="manifest" href="manifest.json">
-<title>Japão 2026 • Operacional</title>
-<style>
-:root{--navy:#17365D;--blue:#1F4E78;--green:#70AD47;--bg:#F4F7FB;--muted:#667085;--card:#fff;--yellow:#FFF2CC;--orange:#FCE4D6}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;color:var(--navy)}
-.app{max-width:780px;margin:auto;padding-bottom:45px}.top{position:sticky;top:0;z-index:20;color:#fff;background:linear-gradient(135deg,var(--navy),var(--blue));padding:calc(14px + env(safe-area-inset-top)) 14px 10px;box-shadow:0 3px 15px #0002}.title{font-weight:850;font-size:21px}.sub{font-size:9px;opacity:.82;letter-spacing:.09em;margin-top:3px}.picker{margin-top:10px;background:#fff;border-radius:12px;padding:6px;display:flex;align-items:center;color:var(--navy)}select{width:100%;border:0;background:#E2F0D9;border-radius:9px;padding:9px;font-weight:800;color:var(--navy);font-size:14px}.tabs{display:flex;gap:6px;margin-top:9px;overflow:auto}.tab{white-space:nowrap;border:0;border-radius:9px;padding:8px 10px;background:#ffffff25;color:#fff;font-weight:800;font-size:11px}.tab.on{background:#fff;color:var(--navy)}
-.body{padding:12px}.card{background:var(--card);border-radius:15px;padding:13px;margin-bottom:9px;box-shadow:0 2px 9px #17365d12}.city{font-size:10px;font-weight:850;text-transform:uppercase;color:var(--blue)}h2{font-size:20px;margin:3px 0 8px}h3{font-size:11px;text-transform:uppercase;color:var(--blue);margin:0 0 8px}p{font-size:13px;line-height:1.45;margin:0}.pills{display:flex;flex-wrap:wrap;gap:6px}.pill{font-size:10px;font-weight:800;background:#EEF3F8;padding:6px 8px;border-radius:8px}.warn{background:var(--yellow);border-left:4px solid #F4B183}.bag{background:#F1F8EC;border-left:4px solid var(--green)}.row{padding:9px 0;border-top:1px solid #e8edf2}.row:first-child{border-top:0}.time{font-weight:850;font-size:12px;color:var(--blue)}.title2{font-weight:800;font-size:13px;margin-top:2px}.muted{color:var(--muted);font-size:11px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}.btn{border:0;border-radius:11px;padding:12px;font-weight:800;background:#fff;color:var(--navy);box-shadow:0 2px 8px #17365d18}.green{background:var(--green);color:#fff}.map{display:inline-block;margin-top:7px;text-decoration:none;background:#EAF2F8;border-radius:8px;padding:7px 9px;color:var(--blue);font-weight:800;font-size:11px}.empty{padding:12px;color:var(--muted);font-size:12px}@media(max-width:520px){.grid{grid-template-columns:1fr}}
-</style>
-</head>
-<body><div class="app">
-<header class="top">
-<div class="title">🇦🇪 Dubai + 🇯🇵 Japão 2026</div><div class="sub">DASHBOARD OPERACIONAL • 8 VIAJANTES</div>
-<div class="picker">📅 <select id="day"></select></div>
-<div class="tabs"><button class="tab on" data-tab="dia">Meu dia</button><button class="tab" data-tab="roteiro">Horário</button><button class="tab" data-tab="metro">Metrô</button><button class="tab" data-tab="rest">Restaurantes</button><button class="tab" data-tab="log">Logística</button><button class="tab" data-tab="bag">Bagagem</button><button class="tab" data-tab="inv">Inventário</button><button class="tab" data-tab="tak">Takyubin</button><button class="tab" data-tab="nav">Navegar</button></div>
-</header>
-<main class="body" id="view"></main></div>
-<script src="data.js"></script>
-<script>
 const T=window.TRIP||{}, BI=T.bi||[], day=document.getElementById('day'), view=document.getElementById('view');let tab='dia';
 const esc=x=>String(x??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
 const maps=(a,b)=>`https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(a||'')}&destination=${encodeURIComponent(b||'')}`;
@@ -145,4 +119,3 @@ function setToday(){let t=new Date().toISOString().slice(0,10);if(dates.includes
 function share(){if(navigator.share)navigator.share({title:'Viagem Japão 2026',text:'Dashboard operacional da viagem',url:location.href});else alert('Use o menu Compartilhar do navegador.')}
 day.value=dates[0]||'';render();
 if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js');
-</script></body></html>
