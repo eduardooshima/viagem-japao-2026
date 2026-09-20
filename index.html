@@ -19,7 +19,7 @@
 <header class="top">
 <div class="title">🇦🇪 Dubai + 🇯🇵 Japão 2026</div><div class="sub">DASHBOARD OPERACIONAL • 8 VIAJANTES</div>
 <div class="picker">📅 <select id="day"></select></div>
-<div class="tabs"><button class="tab on" data-tab="dia">Meu dia</button><button class="tab" data-tab="roteiro">Horário</button><button class="tab" data-tab="metro">Metrô</button><button class="tab" data-tab="rest">Restaurantes</button><button class="tab" data-tab="log">Logística</button><button class="tab" data-tab="bag">Bagagem</button><button class="tab" data-tab="inv">Inventário</button><button class="tab" data-tab="nav">Navegar</button></div>
+<div class="tabs"><button class="tab on" data-tab="dia">Meu dia</button><button class="tab" data-tab="roteiro">Horário</button><button class="tab" data-tab="metro">Metrô</button><button class="tab" data-tab="rest">Restaurantes</button><button class="tab" data-tab="log">Logística</button><button class="tab" data-tab="bag">Bagagem</button><button class="tab" data-tab="inv">Inventário</button><button class="tab" data-tab="tak">Takyubin</button><button class="tab" data-tab="nav">Navegar</button></div>
 </header>
 <main class="body" id="view"></main></div>
 <script src="data.js"></script>
@@ -119,6 +119,13 @@ ${(T.moves||[]).filter(z=>z.Data===day.value).map(z=>`<section class="card"><div
  ${(inv.map(z=>`<div class="row"><div class="title2">${esc(z.id)} • ${esc(z.tipo)}</div><p class="muted">👤 ${esc(z.responsavel||'Responsável a definir')} • ⚖️ ${esc(z.peso_kg||'—')} kg • 📍 ${esc(z.local)}</p><p class="muted">🚚 ${esc(z.takyubin||'Takyubin não definido')} ${z.destino?'→ '+esc(z.destino):''} • ${esc(z.status)}</p></div>`).join(''))}
  </section>
  <section class="card bag"><h3>➕ Nova mala durante a viagem</h3><p>Quando houver compras suficientes para criar um novo volume, cadastre uma nova mala/caixa, atribua um responsável e defina onde ela estará e se será enviada por Takyubin.</p></section>`;
+ } if(tab==='tak'){
+ const inv=T.baggage_inventory||[], ops=T.takyubin_operations||[];
+ const totalWeight=inv.reduce((a,z)=>a+(parseFloat(String(z.peso_kg||'').replace(',','.'))||0),0);
+ view.innerHTML=`<section class="card bag"><h3>🚚 Controle de Takyubin</h3>
+ <div class="grid"><div><b>${esc(ops.length)}</b><div class="muted">operações planejadas</div></div><div><b>${esc(inv.filter(z=>z.takyubin).length)}</b><div class="muted">volumes vinculados</div></div><div><b>${esc(totalWeight.toFixed(1))} kg</b><div class="muted">peso cadastrado</div></div><div><b>${esc(inv.length)}</b><div class="muted">volumes no inventário</div></div></div></section>
+ ${(ops.map(op=>{const ids=op.volume_ids||[]; const vols=inv.filter(z=>ids.includes(z.id)); return `<section class="card"><div class="city">${esc(op.date.split('-').reverse().join('/'))}</div><h2>${esc(op.from)} → ${esc(op.to)}</h2><div class="pills"><span class="pill">📦 ${esc(vols.length)} volumes</span><span class="pill">📌 ${esc(op.status)}</span></div><p style="margin-top:8px">${esc(op.observacao)}</p><div class="row"><div class="title2">Volumes vinculados</div>${vols.length?vols.map(z=>`<p class="muted">🧳 ${esc(z.id)} • ${esc(z.responsavel||'responsável a definir')} • ${esc(z.tipo)} • ${esc(z.peso_kg||'—')} kg</p>`).join(''):'<p class="muted">Nenhuma mala vinculada ainda.</p>'}</div></section>`}).join(''))}
+ <section class="card"><h3>✅ Checklist de despacho</h3><p>1. Confirmar hotel de destino • 2. Conferir volume e peso • 3. Retirar itens essenciais • 4. Fotografar etiqueta • 5. Guardar comprovante • 6. Atualizar o status da mala.</p></section>`;
  } document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.tab===tab));
 }
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{tab=b.dataset.tab;render()});
