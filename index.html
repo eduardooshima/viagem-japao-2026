@@ -19,7 +19,7 @@
 <header class="top">
 <div class="title">🇦🇪 Dubai + 🇯🇵 Japão 2026</div><div class="sub">DASHBOARD OPERACIONAL • 8 VIAJANTES</div>
 <div class="picker">📅 <select id="day"></select></div>
-<div class="tabs"><button class="tab on" data-tab="dia">Hoje</button><button class="tab" data-tab="roteiro">Horário</button><button class="tab" data-tab="metro">Metrô</button><button class="tab" data-tab="rest">Restaurantes</button><button class="tab" data-tab="log">Logística</button><button class="tab" data-tab="bag">Bagagem</button></div>
+<div class="tabs"><button class="tab on" data-tab="dia">Meu dia</button><button class="tab" data-tab="roteiro">Horário</button><button class="tab" data-tab="metro">Metrô</button><button class="tab" data-tab="rest">Restaurantes</button><button class="tab" data-tab="log">Logística</button><button class="tab" data-tab="bag">Bagagem</button></div>
 </header>
 <main class="body" id="view"></main></div>
 <script src="data.js"></script>
@@ -34,16 +34,57 @@ function rows(arr,filter){
  let r=arr.filter(filter); if(!r.length)return '<div class="empty">Nenhuma informação cadastrada para este dia.</div>';
  return r.map(x=>`<div class="row"><div class="time">${esc(x.Horário||x['Tempo ref.']||x['Horário operacional sugerido']||'')}</div><div class="title2">${esc(x.Etapa||x['Trecho / destino']||x['Restaurante sugerido']||x.Destino||'')}</div><p class="muted">${esc(x['Deslocamento / ação']||x['Rota passo a passo']||x['Por que faz sentido']||x['Como identificar']||x['Ponto de atenção']||'')}</p></div>`).join('');
 }
+function timeMinutes(v){
+ const m=String(v||'').match(/(\d{1,2}):(\d{2})/); return m?Number(m[1])*60+Number(m[2]):9999;
+}
 function renderDia(x){
- view.innerHTML=`<section class="card"><div class="city">${esc(x.Cidade)}</div><h2>${esc(x.Atividade)}</h2><div class="pills"><span class="pill">⏰ ${esc(x.Horário)}</span><span class="pill">🚇 ${esc(x.Transporte)}</span><span class="pill">⭐ ${esc(x.Prioridade)}</span><span class="pill">📌 ${esc(x.Status)}</span></div></section>
-<section class="card"><h3>🧭 Próxima logística</h3><p>${esc(x['Logística detalhada']||x.Observação)}</p></section>
-<section class="card warn"><h3>⚠️ Ação do dia</h3><p>${esc(x['Ação relevante do dia']||'Nenhuma ação crítica cadastrada.')}</p></section>
-<section class="card bag"><h3>🧳 Bagagem / Takyubin</h3><p>${esc(x['Bagagem / Takyubin']||'Nenhuma operação de bagagem cadastrada.')}</p></section>
-<div class="grid"><section class="card"><h3>🍜 Almoço</h3><p>${esc(x['Almoço sugerido'])}</p></section><section class="card"><h3>🍽️ Jantar</h3><p>${esc(x['Jantar sugerido'])}</p></section></div>
-<section class="card"><h3>🕒 Horário operacional</h3><p>${esc(x['Horário operacional sugerido'])}</p></section>
-<div class="btns"><button class="btn green" onclick="setToday()">📅 Hoje</button><button class="btn" onclick="share()">↗ Compartilhar</button></div>`;
+ const dayRows=(T.schedule||[]).filter(z=>z.Data===day.value).sort((a,b)=>timeMinutes(a.Horário)-timeMinutes(b.Horário));
+ const now=new Date();
+ const selected=day.value;
+ const todayISO=now.toISOString().slice(0,10);
+ let next=dayRows[0];
+ if(selected===todayISO){
+   const mins=now.getHours()*60+now.getMinutes();
+   next=dayRows.find(z=>timeMinutes(z.Horário)>=mins)||dayRows[dayRows.length-1];
+ }
+ const nextTime=next?.Horário||x.Horário||'';
+ const nextTitle=next?.Etapa||x.Atividade||'';
+ const nextAction=next?.['Deslocamento / ação']||x['Ação relevante do dia']||x.Observação||'';
+ view.innerHTML=`
+ <section class="card" style="background:linear-gradient(135deg,#17365D,#1F4E78);color:#fff">
+   <div style="font-size:10px;font-weight:850;letter-spacing:.08em;opacity:.8">PRÓXIMA AÇÃO</div>
+   <h2 style="margin:4px 0;color:#fff">${esc(nextTime)} — ${esc(nextTitle)}</h2>
+   <p style="opacity:.92">${esc(nextAction)}</p>
+   ${selected===todayISO?'<div id="countdown" style="margin-top:10px;font-size:13px;font-weight:850">Calculando...</div>':'<div style="margin-top:9px;font-size:11px;opacity:.8">Selecione a data do dia para acompanhar a operação.</div>'}
+ </section>
+ <section class="card"><div class="city">${esc(x.Cidade)}</div><h2>${esc(x.Atividade)}</h2>
+   <div class="pills"><span class="pill">⏰ ${esc(x.Horário)}</span><span class="pill">🚇 ${esc(x.Transporte)}</span><span class="pill">⭐ ${esc(x.Prioridade)}</span><span class="pill">📌 ${esc(x.Status)}</span></div>
+ </section>
+ <section class="card"><h3>🕒 Roteiro do dia</h3>
+   ${dayRows.length?dayRows.map(z=>`<div class="row"><div class="time">${esc(z.Horário)}</div><div class="title2">${esc(z.Etapa)}</div><p class="muted">${esc(z['Deslocamento / ação'])}</p><p class="muted">${esc(z['Reserva / pagamento'])}${z.Observação?' • '+esc(z.Observação):''}</p></div>`).join(''):'<div class="empty">Nenhum horário detalhado cadastrado.</div>'}
+ </section>
+ <section class="card"><h3>🧭 Logística</h3><p>${esc(x['Logística detalhada']||x.Observação)}</p></section>
+ <section class="card warn"><h3>⚠️ Ação importante</h3><p>${esc(x['Ação relevante do dia']||'Nenhuma ação crítica cadastrada.')}</p></section>
+ <section class="card bag"><h3>🧳 Bagagem / Takyubin</h3><p>${esc(x['Bagagem / Takyubin']||'Nenhuma operação de bagagem cadastrada.')}</p></section>
+ <div class="grid"><section class="card"><h3>🍜 Almoço</h3><p>${esc(x['Almoço sugerido'])}</p></section><section class="card"><h3>🍽️ Jantar</h3><p>${esc(x['Jantar sugerido'])}</p></section></div>
+ <section class="card"><h3>🕒 Horário operacional</h3><p>${esc(x['Horário operacional sugerido'])}</p></section>
+ <div class="btns"><button class="btn green" onclick="setToday()">📅 Hoje</button><button class="btn" onclick="share()">↗ Compartilhar</button></div>`;
+ if(selected===todayISO) startCountdown(nextTime);
+}
+function startCountdown(t){
+ const el=document.getElementById('countdown'); if(!el)return;
+ function tick(){
+   const m=String(t||'').match(/(\d{1,2}):(\d{2})/);
+   if(!m){el.textContent='⏱️ Horário operacional';return;}
+   const n=new Date(), target=new Date(); target.setHours(+m[1],+m[2],0,0);
+   let diff=target-n;
+   if(diff>0){let mins=Math.floor(diff/60000), h=Math.floor(mins/60); mins%=60; el.textContent=`⏱️ Começa em ${h?h+'h ':''}${mins}min`;}
+   else {el.textContent='🟢 Horário já iniciado ou concluído';}
+ }
+ tick(); window.__cd=setInterval(tick,30000);
 }
 function render(){
+ if(window.__cd){clearInterval(window.__cd);window.__cd=null;}
  let x=get();
  if(tab==='dia')return renderDia(x);
  if(tab==='roteiro')view.innerHTML=`<section class="card"><h3>🕒 Roteiro horário</h3>${rows(T.schedule,z=>z.Data===day.value)}</section>`;
