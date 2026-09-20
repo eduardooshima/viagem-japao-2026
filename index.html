@@ -19,7 +19,7 @@
 <header class="top">
 <div class="title">🇦🇪 Dubai + 🇯🇵 Japão 2026</div><div class="sub">DASHBOARD OPERACIONAL • 8 VIAJANTES</div>
 <div class="picker">📅 <select id="day"></select></div>
-<div class="tabs"><button class="tab on" data-tab="dia">Meu dia</button><button class="tab" data-tab="roteiro">Horário</button><button class="tab" data-tab="metro">Metrô</button><button class="tab" data-tab="rest">Restaurantes</button><button class="tab" data-tab="log">Logística</button><button class="tab" data-tab="bag">Bagagem</button></div>
+<div class="tabs"><button class="tab on" data-tab="dia">Meu dia</button><button class="tab" data-tab="roteiro">Horário</button><button class="tab" data-tab="metro">Metrô</button><button class="tab" data-tab="rest">Restaurantes</button><button class="tab" data-tab="log">Logística</button><button class="tab" data-tab="bag">Bagagem</button><button class="tab" data-tab="nav">Navegar</button></div>
 </header>
 <main class="body" id="view"></main></div>
 <script src="data.js"></script>
@@ -64,6 +64,18 @@ function renderDia(x){
    ${dayRows.length?dayRows.map(z=>`<div class="row"><div class="time">${esc(z.Horário)}</div><div class="title2">${esc(z.Etapa)}</div><p class="muted">${esc(z['Deslocamento / ação'])}</p><p class="muted">${esc(z['Reserva / pagamento'])}${z.Observação?' • '+esc(z.Observação):''}</p></div>`).join(''):'<div class="empty">Nenhum horário detalhado cadastrado.</div>'}
  </section>
  <section class="card"><h3>🧭 Logística</h3><p>${esc(x['Logística detalhada']||x.Observação)}</p></section>
+ <section class="card">
+   <h3>🗺️ Próximo deslocamento</h3>
+   ${(()=>{
+      const m=(T.moves||[]).filter(z=>z.Data===day.value)[0];
+      if(!m)return '<div class="empty">Nenhum deslocamento detalhado cadastrado para este dia.</div>';
+      return `<div class="title2">${esc(m['Trecho / destino'])}</div>
+      <p>${esc(m['Rota passo a passo'])}</p>
+      <div class="pills" style="margin-top:8px"><span class="pill">🚪 ${esc(m['Saída sugerida'])}</span><span class="pill">⏱️ ${esc(m['Tempo de referência'])}</span><span class="pill">🎫 ${esc(m['Bilhete / pagamento'])}</span></div>
+      <p class="muted" style="margin-top:7px">⚠️ ${esc(m['Ponto de atenção'])}</p>
+      <a class="map" target="_blank" href="${maps('',m['Trecho / destino'])}">🗺️ Abrir destino no Google Maps</a>`;
+   })()}
+ </section>
  <section class="card warn"><h3>⚠️ Ação importante</h3><p>${esc(x['Ação relevante do dia']||'Nenhuma ação crítica cadastrada.')}</p></section>
  <section class="card bag"><h3>🧳 Bagagem / Takyubin</h3><p>${esc(x['Bagagem / Takyubin']||'Nenhuma operação de bagagem cadastrada.')}</p></section>
  <div class="grid"><section class="card"><h3>🍜 Almoço</h3><p>${esc(x['Almoço sugerido'])}</p></section><section class="card"><h3>🍽️ Jantar</h3><p>${esc(x['Jantar sugerido'])}</p></section></div>
@@ -93,6 +105,8 @@ function render(){
  if(tab==='log')view.innerHTML=`<section class="card"><h3>🧭 Deslocamentos detalhados</h3>${(T.moves||[]).filter(z=>z.Data===day.value).map(z=>`<div class="row"><div class="time">${esc(z['Saída sugerida'])}</div><div class="title2">${esc(z['Trecho / destino'])}</div><p>${esc(z['Rota passo a passo'])}</p><p class="muted">⏱ ${esc(z['Tempo de referência'])} • 🎫 ${esc(z['Bilhete / pagamento'])}</p><p class="muted">⚠️ ${esc(z['Ponto de atenção'])}</p><a class="map" target="_blank" href="${maps('',z['Trecho / destino'])}">🗺️ Abrir destino</a></div>`).join('')||'<div class="empty">Nenhum deslocamento cadastrado.</div>'}</section>`;
  if(tab==='bag')view.innerHTML=`<section class="card bag"><h3>🧳 Plano de bagagem + Takyubin</h3><p><b>Regra de ouro:</b> passaportes, dinheiro, medicamentos essenciais e eletrônicos indispensáveis ficam sempre com vocês. Antes de enviar uma mala, fotografem a etiqueta e guardem o comprovante.</p></section>
 ${(T.baggage||[]).map(z=>`<section class="card"><div class="title2">${esc(z.Volume)}</div><div class="pills" style="margin:7px 0"><span class="pill">📍 ${esc(z['Início'])}</span><span class="pill">➡️ ${esc(z.Enviar)}</span><span class="pill">🏨 ${esc(z.Destino)}</span><span class="pill">📅 ${esc(z.Quando)}</span><span class="pill">📌 ${esc(z.Status)}</span></div><p><b>Levar com vocês:</b> ${esc(z['O que deve ficar com vocês'])}</p><p class="muted" style="margin-top:6px"><b>Não enviar:</b> ${esc(z['O que NÃO pode ir'])}</p></section>`).join('')}`;
+ if(tab==='nav')view.innerHTML=`<section class="card"><h3>🗺️ Navegação do dia</h3><p class="muted">Use esta tela como guia rápido. Para detalhes de metrô, veja também a aba Metrô.</p></section>
+${(T.moves||[]).filter(z=>z.Data===day.value).map(z=>`<section class="card"><div class="city">${esc(z['Saída sugerida'])}</div><h2>${esc(z['Trecho / destino'])}</h2><p>${esc(z['Rota passo a passo'])}</p><div class="pills" style="margin:9px 0"><span class="pill">⏱️ ${esc(z['Tempo de referência'])}</span><span class="pill">🎫 ${esc(z['Bilhete / pagamento'])}</span></div><p class="muted">⚠️ ${esc(z['Ponto de atenção'])}</p><a class="map" target="_blank" href="${maps('',z['Trecho / destino'])}">📍 Abrir no Google Maps</a></section>`).join('')||'<section class="card"><div class="empty">Nenhum deslocamento detalhado cadastrado para este dia.</div></section>'}`;
  document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.tab===tab));
 }
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{tab=b.dataset.tab;render()});
