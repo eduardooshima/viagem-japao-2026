@@ -140,6 +140,8 @@ ${(T.moves||[]).filter(z=>z.Data===day.value).map(z=>`<section class="card"><div
      view.innerHTML='<section class="card"><h3>➕ Adicionar bagagem</h3><label>Responsável<select id="bp1">'+(T.travellers||[]).map(n=>'<option>'+esc(n)+'</option>').join('')+'</select></label><label>Tipo<select id="bt"><option>23 kg</option><option>32 kg</option><option>Bordo</option><option>Mochila</option><option>Caixa</option><option>Outro</option></select></label><label>Peso (kg)<input id="bw" inputmode="decimal" placeholder="Ex.: 18,5"></label><label>Local<input id="bl" placeholder="Ex.: Tokyo"></label><label>Takyubin<select id="bk"><option>Não definido</option><option>Tokyo → Nagoya</option><option>Nagoya → Tokyo</option><option>Não</option></select></label><button class="btn green" id="bsv" style="width:100%;margin-top:8px">💾 Salvar</button><button class="btn" id="bc" style="width:100%;margin-top:8px">Cancelar</button></section>';
      document.getElementById('bsv').onclick=()=>{bags.push({id:id,p:document.getElementById('bp1').value,t:document.getElementById('bt').value,w:document.getElementById('bw').value,l:document.getElementById('bl').value,k:document.getElementById('bk').value});save();show()};
      document.getElementById('bc').onclick=show;
+   view.querySelectorAll('[data-edit]').forEach(btn=>btn.onclick=()=>editLocalBag(bags.find(b=>b.id===btn.dataset.edit)));
+   view.querySelectorAll('[data-del]').forEach(btn=>btn.onclick=()=>{const id=btn.dataset.del;if(confirm('Excluir este volume de bagagem?')){bags=bags.filter(b=>b.id!==id);save();show()}});
    };
  };
  show();
