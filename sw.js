@@ -1,4 +1,4 @@
-const C='japao2026-v19';
+const C='japao2026-v20';
 const A=['./','./index.html','./data.js','./manifest.json','./icon.svg'];
 
 self.addEventListener('install', event => {
