@@ -29,6 +29,7 @@ const esc=x=>String(x??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&
 const maps=(a,b)=>`https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(a||'')}&destination=${encodeURIComponent(b||'')}`;
 const INV_KEY='jp_bag_v102', PEOPLE_KEY='jp_bag_people_v102';
 function localBags(){try{const bags=JSON.parse(localStorage.getItem(INV_KEY)||'[]');const people=JSON.parse(localStorage.getItem(PEOPLE_KEY)||'[]');return bags.filter(b=>!people.length||people.indexOf(b.p)>=0)}catch(e){return[]}}
+function bagWeight(b){const n=String(b?.w??'').replace(',','.').match(/\d+(?:\.\d+)?/);return n?Number(n[0]):0}
 function routeLabel(b){return String(b.k||'').trim()}
 function bagTypeSummary(bags){const m={};bags.forEach(b=>{const t=b.t||'Outro';m[t]=(m[t]||0)+1});return Object.entries(m).map(([k,v])=>v+' × '+k).join(' • ')||'Nenhuma bagagem cadastrada'}
 function bagRouteSummary(bags,route){return bags.filter(b=>routeLabel(b)===route)}
