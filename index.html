@@ -145,6 +145,15 @@ ${(T.moves||[]).filter(z=>z.Data===day.value).map(z=>`<section class="card"><div
    };
  };
  show();
+ if(!view.dataset.bagActions){
+   view.dataset.bagActions='1';
+   view.addEventListener('click',e=>{
+     const edit=e.target.closest('[data-edit]');
+     const del=e.target.closest('[data-del]');
+     if(edit){const b=bags.find(x=>x.id===edit.dataset.edit);if(b)editLocalBag(b);}
+     if(del){const id=del.dataset.del;if(confirm('Excluir este volume de bagagem?')){bags=bags.filter(x=>x.id!==id);save();show();}}
+   });
+ }
  } if(tab==='tak'){const o=dynamicBagOverview(),bags=o.bags,routes=o.routes;let h='<section class="card bag"><h3>🚚 Controle de Takyubin</h3><div class="grid"><div><b>'+routes.length+'</b><div class="muted">rotas</div></div><div><b>'+bags.filter(b=>routes.includes(routeLabel(b))).length+'</b><div class="muted">volumes para envio</div></div><div><b>'+o.total+'</b><div class="muted">volumes totais</div></div><div><b>'+o.weight.toFixed(1)+' kg</b><div class="muted">peso</div></div></div><p class="muted">Fonte: Inventário local deste dispositivo.</p></section>';h+=routes.map(route=>{const vols=bagRouteSummary(bags,route);return '<section class="card"><h2>'+esc(route)+'</h2>'+vols.map(z=>'<div class="row"><div class="title2">'+esc(z.id)+' • '+esc(z.p||'—')+'</div><p class="muted">'+esc(z.t)+' • '+esc(z.w||'—')+' kg • '+esc(z.l||'—')+'</p></div>').join('')+'</section>'}).join('');view.innerHTML=h;}
 document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.tab===tab));
 }
